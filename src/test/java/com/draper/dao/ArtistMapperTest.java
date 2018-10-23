@@ -1,7 +1,7 @@
 package com.draper.dao;
 
 import com.draper.BaseTest;
-import com.draper.TimeUtil;
+import com.draper.service.util.TimeUtil;
 import com.draper.entity.Artist;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -45,4 +45,8 @@ public class ArtistMapperTest extends BaseTest {
         artistMapper.deleteArtistById(1);
     }
 
+    @Test
+    public void testUpdateValue() throws Exception {
+        artistMapper.updateArtistValue("email","我是邮箱", "name", "我是小名");
+    }
 }

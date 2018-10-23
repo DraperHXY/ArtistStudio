@@ -9,7 +9,7 @@ public interface TitleMapper {
 
     void insertTitle(Title title);
 
-    void updateTitleValue(@Param("id") long id, @Param("key")String key,@Param("value") Object value);
+    void updateTitleValue(@Param("queryKey") String queryKey, @Param("queryValue") Object queryValue, @Param("key") String key, @Param("value") Object value);
 
     List<Title> selectTitleList();
 

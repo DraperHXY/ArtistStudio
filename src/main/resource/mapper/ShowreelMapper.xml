@@ -35,4 +35,17 @@
         WHERE name = #{name}
     </select>
 
+    <update id="updateShowreelValue">
+        UPDATE showreel
+        SET ${key} = #{value}
+        WHERE id = #{id}
+    </update>
+
+    <select id="getShowreelId" resultType="Long">
+        SELECT id
+        FROM showreel
+        WHERE name = #{name}
+        AND production_id = #{productionId}
+    </select>
+
 </mapper>

@@ -1,4 +1,4 @@
-package com.draper;
+package com.draper.service.util;
 
 import java.util.Date;
 

@@ -1,7 +1,7 @@
 package com.draper.dao;
 
 import com.draper.BaseTest;
-import com.draper.TimeUtil;
+import com.draper.service.util.TimeUtil;
 import com.draper.entity.Title;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -31,7 +31,7 @@ public class TitleMapperTest extends BaseTest {
 
     @Test
     public void testUpdateTitleValue() {
-        titleMapper.updateTitleValue(1, "level", 2);
+        titleMapper.updateTitleValue("level", 2, "url", "还好");
     }
 
     @Test

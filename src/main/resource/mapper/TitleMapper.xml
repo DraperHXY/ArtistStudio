@@ -15,7 +15,7 @@
     <update id="updateTitleValue">
         UPDATE title
         SET ${key} = #{value}
-        WHERE id = #{id}
+        WHERE ${queryKey} = #{queryValue}
     </update>
 
     <!--id, create_at, name, level, url, editor_id-->

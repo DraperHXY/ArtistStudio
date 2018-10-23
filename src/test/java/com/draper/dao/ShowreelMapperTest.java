@@ -1,7 +1,7 @@
 package com.draper.dao;
 
 import com.draper.BaseTest;
-import com.draper.TimeUtil;
+import com.draper.service.util.TimeUtil;
 import com.draper.entity.Showreel;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class ShowreelMapperTest extends BaseTest{
+public class ShowreelMapperTest extends BaseTest {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -50,5 +50,15 @@ public class ShowreelMapperTest extends BaseTest{
         for (int i = 0; i < showreelList.size(); i++) {
             logger.warn("showreel productionId = {}", showreelList.get(i).getProductionId());
         }
+    }
+
+    @Test
+    public void testUpdateShowreelValue() throws Exception {
+        showreelMapper.updateShowreelValue(4, "state", 0);
+    }
+
+    @Test
+    public void testGetShowreelId() throws Exception {
+        logger.warn("id = {}", showreelMapper.getShowreelId("我是作品集名", 1));
     }
 }

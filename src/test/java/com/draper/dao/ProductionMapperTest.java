@@ -1,7 +1,7 @@
 package com.draper.dao;
 
 import com.draper.BaseTest;
-import com.draper.TimeUtil;
+import com.draper.service.util.TimeUtil;
 import com.draper.entity.Production;
 import org.junit.Test;
 import org.slf4j.Logger;

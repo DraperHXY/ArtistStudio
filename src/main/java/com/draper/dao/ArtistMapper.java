@@ -13,4 +13,6 @@ public interface ArtistMapper {
 
     void deleteArtistById(long id);
 
+    void updateArtistValue(@Param("queryKey") String queryKey, @Param("queryValue") Object queryValue, @Param("key") String key, @Param("value") Object value);
+
 }

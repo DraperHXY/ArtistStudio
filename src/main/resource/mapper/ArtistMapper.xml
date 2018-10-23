@@ -29,4 +29,10 @@
         WHERE id = #{id}
     </delete>
 
+    <update id="updateArtistValue">
+        UPDATE artist
+        SET ${key} = #{value}
+        WHERE ${queryKey} = #{queryValue}
+    </update>
+
 </mapper>
