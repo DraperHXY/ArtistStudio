@@ -6,8 +6,8 @@
     <!-- 目的：为dao接口方法提供sql语句配置 -->
 
     <insert id="insertProduction" parameterType="com.draper.entity.Production">
-        INSERT INTO production (create_at, artist_id, intro, state, editor_id, thumbnail_url, video_url, artical)
-        VALUES (#{createAt}, #{artistId}, #{intro},#{state}, #{editorId}, #{thumbnailUrl}, #{videoUrl}, #{artical})
+        INSERT INTO production (create_at, artist_id, intro, state, editor_id, thumbnail_url, video_url, article)
+        VALUES (#{createAt}, #{artistId}, #{intro},#{state}, #{editorId}, #{thumbnailUrl}, #{videoUrl}, #{article})
     </insert>
 
     <select id="selectProductionById" resultType="com.draper.entity.Production">
@@ -25,5 +25,39 @@
         WHERE id = #{id};
     </delete>
 
+    <update id="setUpShow">
+        UPDATE production
+        SET state = 1
+        WHERE id = #{id}
+    </update>
+
+    <update id="setDownShow">
+        UPDATE production
+        SET state = 0
+        WHERE id = #{id}
+    </update>
+
+    <select id="selectAllProduction" resultType="com.draper.entity.Production">
+        SELECT *
+        FROM production
+    </select>
+
+    <select id="selectBannerProduction" resultType="com.draper.entity.Production">
+        SELECT *
+        FROM production
+        WHERE banner = 1;
+    </select>
+
+    <update id="setUpBanner">
+        UPDATE production
+        SET banner = 1
+        WHERE id = #{id}
+    </update>
+
+    <update id="setDownBanner">
+        UPDATE production
+        SET banner = 0
+        WHERE id = #{id}
+    </update>
 
 </mapper>

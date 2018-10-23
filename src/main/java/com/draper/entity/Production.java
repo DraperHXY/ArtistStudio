@@ -12,6 +12,7 @@ public class Production {
     private String thumbnailUrl;
     private String videoUrl;
     private String article;
+    private int banner;
 
     public long getCreateAt() {
         return createAt;
@@ -91,5 +92,13 @@ public class Production {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public int getBanner() {
+        return banner;
+    }
+
+    public void setBanner(int banner) {
+        this.banner = banner;
     }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.draper.dao.ArtistMapper">
+
+    <insert id="insertArtist">
+        INSERT INTO artist
+        (create_at, email, name, phone_number, address, career, img_url)
+        VALUES
+        (#{createAt}, #{email}, #{name}, #{phoneNumber}, #{address}, #{career}, #{imgUrl})
+    </insert>
+
+    <select id="selectArtistById" resultType="com.draper.entity.Artist">
+        SELECT *
+        FROM artist
+        WHERE id = #{id}
+    </select>
+
+    <update id="updateArtistValueByKey">
+        UPDATE artist
+        SET ${key} = #{value}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteArtistById">
+        DELETE FROM artist
+        WHERE id = #{id}
+    </delete>
+
+</mapper>

@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 public class ProductionMapperTest extends BaseTest {
 
     private final Logger logger = LoggerFactory.getLogger(String.valueOf(this));
@@ -59,8 +61,43 @@ public class ProductionMapperTest extends BaseTest {
     }
 
     @Test
-    public void testDeleteProductionById(){
+    public void testDeleteProductionById() {
         productionMapper.deleteProductionById(1);
     }
 
+    @Test
+    public void testSetUpShow() {
+        productionMapper.setUpShow(1);
+    }
+
+    @Test
+    public void testSetDownShow() {
+        productionMapper.setDownShow(1);
+    }
+
+    @Test
+    public void testSelectAllProduction() throws Exception {
+        List<Production> productionList = productionMapper.selectAllProduction();
+        for (int i = 0; i < productionList.size(); i++) {
+            logger.warn("intro = {}", productionList.get(i).getIntro());
+        }
+    }
+
+    @Test
+    public void testSelectBannerProduction() {
+        List<Production> productionList = productionMapper.selectBannerProduction();
+        for (int i = 0; i < productionList.size(); i++) {
+            logger.warn("intro = {}", productionList.get(i).getIntro());
+        }
+    }
+
+    @Test
+    public void testSetUpBanner() throws Exception {
+        productionMapper.setUpBanner(1);
+    }
+
+    @Test
+    public void testSetDownBanner() throws Exception {
+        productionMapper.setDownBanner(1);
+    }
 }
