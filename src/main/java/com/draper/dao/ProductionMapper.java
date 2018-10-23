@@ -27,4 +27,6 @@ public interface ProductionMapper {
     void setUpBanner(long id);
 
     void setDownBanner(long id);
+
+    List<Production> selectProductionListByKeyValue(@Param("key") String key, @Param("value") Object value);
 }

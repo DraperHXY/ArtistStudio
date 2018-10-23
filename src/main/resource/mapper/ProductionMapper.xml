@@ -60,4 +60,10 @@
         WHERE id = #{id}
     </update>
 
+    <select id="selectProductionListByKeyValue" resultType="com.draper.entity.Production">
+        SELECT *
+        FROM production
+        WHERE ${key} = #{value}
+    </select>
+
 </mapper>

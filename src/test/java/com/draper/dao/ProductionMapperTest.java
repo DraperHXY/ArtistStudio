@@ -100,4 +100,12 @@ public class ProductionMapperTest extends BaseTest {
     public void testSetDownBanner() throws Exception {
         productionMapper.setDownBanner(1);
     }
+
+    @Test
+    public void testSelectProductionListByKeyValue() throws Exception {
+        List<Production> productionList = productionMapper.selectProductionListByKeyValue("state", 0);
+        for (int i = 0; i < productionList.size(); i++) {
+            logger.warn("production article = {}", productionList.get(i).getArticle());
+        }
+    }
 }
