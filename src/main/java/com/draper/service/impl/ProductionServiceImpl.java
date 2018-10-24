@@ -1,7 +1,9 @@
 package com.draper.service.impl;
 
 import com.draper.dao.ProductionMapper;
+import com.draper.dao.ShowreelMapper;
 import com.draper.entity.Production;
+import com.draper.entity.Showreel;
 import com.draper.service.ProductionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,9 @@ public class ProductionServiceImpl implements ProductionService {
 
     @Autowired
     private ProductionMapper productionMapper;
+
+    @Autowired
+    private ShowreelMapper showreelMapper;
 
     @Override
     public void insertProduction(Production production) {
@@ -37,11 +42,13 @@ public class ProductionServiceImpl implements ProductionService {
     @Override
     public void setUpShow(long id) {
         productionMapper.updateProductionValueByKey("state", 1, id);
+        showreelMapper.setUpShowProduction(id);
     }
 
     @Override
     public void setDownShow(long id) {
         productionMapper.updateProductionValueByKey("state", 0, id);
+        showreelMapper.setDownShowProduction(id);
     }
 
     @Override

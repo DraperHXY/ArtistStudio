@@ -8,7 +8,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class ShowreelMapperTest extends BaseTest {
 
@@ -40,8 +43,19 @@ public class ShowreelMapperTest extends BaseTest {
     }
 
     @Test
+    public void testSetUpShowProduction() {
+        showreelMapper.setUpShowProduction(3);
+    }
+
+    @Test
     public void testSetDownShow() throws Exception {
         showreelMapper.setDownShow("我是作品集名");
+    }
+
+    @Test
+    public void testSetDownShowProduction() {
+        showreelMapper.setDownShowProduction(3);
+
     }
 
     @Test
@@ -60,5 +74,18 @@ public class ShowreelMapperTest extends BaseTest {
     @Test
     public void testGetShowreelId() throws Exception {
         logger.warn("id = {}", showreelMapper.getShowreelId("我是作品集名", 1));
+    }
+
+    @Test
+    public void testSearchByKey() {
+        String key = "%山%";
+        List<Long> productionIdList = showreelMapper.searchByKey(key);
+        Set<Long> productionIdSet = new HashSet<>(productionIdList);
+        productionIdList.clear();
+        productionIdList.addAll(productionIdSet);
+
+        for (Long aLong : productionIdList) {
+            logger.warn("id = {}", aLong);
+        }
     }
 }

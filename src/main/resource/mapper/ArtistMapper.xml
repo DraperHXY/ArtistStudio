@@ -35,4 +35,10 @@
         WHERE ${queryKey} = #{queryValue}
     </update>
 
+    <select id="getIdByEmail" resultType="long">
+        SELECT id
+        FROM artist
+        WHERE email = #{email}
+    </select>
+
 </mapper>

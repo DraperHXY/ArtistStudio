@@ -6,9 +6,17 @@ public interface ArtistService {
 
     void insertArtist(Artist artist);
 
-    void selectArtistByEmail(String email);
+    Artist selectArtist(String email);
 
-    void updateArtistValue(String queryKey, Object queryValue, String key, String value);
+    void updateAddress(String email, String address);
+
+    void updateEmail(String oldEmail, String newEmail);
+
+    void updatePhoneNumber(String email, String phoneNumber);
+
+    void updateCareer(String email, String career);
+
+    void updateImgUrl(String email, String imgUrl);
 
     void deleteArtistByEmail(String email);
 

@@ -15,4 +15,6 @@ public interface ArtistMapper {
 
     void updateArtistValue(@Param("queryKey") String queryKey, @Param("queryValue") Object queryValue, @Param("key") String key, @Param("value") Object value);
 
+    long getIdByEmail(String email);
+
 }

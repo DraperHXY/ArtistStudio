@@ -23,10 +23,22 @@
         WHERE name = #{name}
     </update>
 
+    <update id="setUpShowProduction">
+        UPDATE showreel
+        SET state = 1
+        WHERE production_id = #{productionId}
+    </update>
+
     <update id="setDownShow">
         UPDATE showreel
         SET state = 0
         WHERE name = #{name}
+    </update>
+
+    <update id="setDownShowProduction">
+        UPDATE showreel
+        SET state = 0
+        WHERE production_id = #{productionId}
     </update>
 
     <select id="selectShowreelListByName" resultType="com.draper.entity.Showreel">
@@ -46,6 +58,15 @@
         FROM showreel
         WHERE name = #{name}
         AND production_id = #{productionId}
+    </select>
+
+    <select id="searchByKey" resultType="Long">
+        SELECT production.id FROM
+        production, showreel
+        WHERE article LIKE #{key}
+        OR name LIKE #{key}
+        OR intro LIKE #{key}
+        AND production.id = showreel.production_id
     </select>
 
 </mapper>

@@ -49,4 +49,10 @@ public class ArtistMapperTest extends BaseTest {
     public void testUpdateValue() throws Exception {
         artistMapper.updateArtistValue("email","我是邮箱", "name", "我是小名");
     }
+
+    @Test
+    public void testGetIdByEmail() throws Exception {
+        long id = artistMapper.getIdByEmail("我是邮箱");
+        logger.warn("artist id = {}", id);
+    }
 }
