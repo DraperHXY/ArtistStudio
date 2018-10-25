@@ -3,6 +3,7 @@ package com.draper.service.impl;
 import com.draper.dao.TitleMapper;
 import com.draper.entity.Title;
 import com.draper.service.TitleService;
+import com.draper.service.util.TimeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ public class TitleServiceImpl implements TitleService {
 
     @Override
     public void insertTitle(Title title) {
+        title.setCreateAt(TimeUtil.getNowTimeAsLong());
         titleMapper.insertTitle(title);
     }
 

@@ -21,11 +21,11 @@ public class ProductionMapperTest extends BaseTest {
     public void testInsertProduction() {
         Production p = new Production();
         p.setCreateAt(TimeUtil.getNowTimeAsLong());
-        p.setArtistId(1);
-        p.setIntro("我是简介");
+        p.setArtistId(2);
+        p.setIntro("我是简介22");
         p.setState(1);
         p.setEditorId(1);
-        p.setThumbnailUrl("我是缩略图 URL");
+        p.setThumbnailUrl("我是缩略图2 URL");
         p.setVideoUrl("我是录像 URL");
         p.setArticle("我是正文文章");
         productionMapper.insertProduction(p);

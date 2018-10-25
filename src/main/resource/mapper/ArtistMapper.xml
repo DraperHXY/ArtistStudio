@@ -35,7 +35,7 @@
         WHERE ${queryKey} = #{queryValue}
     </update>
 
-    <select id="getIdByEmail" resultType="long">
+    <select id="getIdByEmail" resultType="java.lang.Long">
         SELECT id
         FROM artist
         WHERE email = #{email}

@@ -69,4 +69,9 @@
         AND production.id = showreel.production_id
     </select>
 
+    <delete id="deleteProduction">
+        DELETE FROM showreel
+        WHERE production_id = #{productionId}
+    </delete>
+
 </mapper>

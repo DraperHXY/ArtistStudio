@@ -59,7 +59,7 @@ public class ShowreelController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/showreel/up", method = RequestMethod.POST)
+    @RequestMapping(value = "/showreel/up", method = RequestMethod.PUT)
     public Map setUpShow(@RequestBody Map<String, Object> map) {
         String msg = "success";
         try {
@@ -73,7 +73,7 @@ public class ShowreelController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/showreel/down", method = RequestMethod.POST)
+    @RequestMapping(value = "/showreel/down", method = RequestMethod.PUT)
     public Map setDownShow(@RequestBody Map<String, Object> map) {
         String msg = "success";
         try {

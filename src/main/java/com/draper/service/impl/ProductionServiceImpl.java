@@ -5,6 +5,8 @@ import com.draper.dao.ShowreelMapper;
 import com.draper.entity.Production;
 import com.draper.entity.Showreel;
 import com.draper.service.ProductionService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ import java.util.List;
 
 @Service
 public class ProductionServiceImpl implements ProductionService {
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private ProductionMapper productionMapper;
@@ -37,6 +41,7 @@ public class ProductionServiceImpl implements ProductionService {
     @Override
     public void deleteProductionById(long id) {
         productionMapper.deleteProductionById(id);
+        showreelMapper.deleteProduction(id);
     }
 
     @Override
@@ -73,6 +78,6 @@ public class ProductionServiceImpl implements ProductionService {
 
     @Override
     public List<Production> selectArtistProduction(long artistId) {
-        return productionMapper.selectProductionListByKeyValue("artist", artistId);
+        return productionMapper.selectProductionListByKeyValue("artist_id", artistId);
     }
 }

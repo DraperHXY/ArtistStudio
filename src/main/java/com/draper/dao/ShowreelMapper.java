@@ -32,4 +32,6 @@ public interface ShowreelMapper {
      * @return productionId
      */
     List<Long> searchByKey(String key);
+
+    void deleteProduction(long productionId);
 }

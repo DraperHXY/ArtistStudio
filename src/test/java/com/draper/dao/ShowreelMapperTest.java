@@ -88,4 +88,9 @@ public class ShowreelMapperTest extends BaseTest {
             logger.warn("id = {}", aLong);
         }
     }
+
+    @Test
+    public void testDeleteProduction() throws Exception {
+        showreelMapper.deleteProduction(1);
+    }
 }

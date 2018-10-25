@@ -3,6 +3,7 @@ package com.draper.service.impl;
 import com.draper.dao.ArtistMapper;
 import com.draper.entity.Artist;
 import com.draper.service.ArtistService;
+import com.draper.service.util.TimeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ public class ArtistServiceImpl implements ArtistService {
 
     @Override
     public void insertArtist(Artist artist) {
+        artist.setCreateAt(TimeUtil.getNowTimeAsLong());
         artistMapper.insertArtist(artist);
     }
 
