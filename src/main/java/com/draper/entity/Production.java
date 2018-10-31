@@ -1,10 +1,17 @@
 package com.draper.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Production {
 
     private long id;
+
+    @JsonIgnore
     private long createAt;
+
+    @JsonIgnore
     private long updateAt;
+
     private long artistId;
     private String intro;
     private int state;

@@ -99,7 +99,7 @@ public class ShowreelController {
             e.printStackTrace();
             msg = "failed";
         } finally {
-            if (msg.equals("success")) {
+            if ("success".equals(msg)) {
                 return responseTo.msg(msg, id);
             } else {
                 return responseTo.msg(msg);

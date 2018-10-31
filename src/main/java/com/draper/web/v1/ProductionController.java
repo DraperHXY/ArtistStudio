@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-@Controller
+@Controller("V1/ProductionController")
 @RequestMapping("/v1")
 public class ProductionController {
 
@@ -155,6 +155,7 @@ public class ProductionController {
     @ResponseBody
     @RequestMapping(value = "/production/list/all", method = RequestMethod.GET)
     public Map sselectAllProduction() {
+        logger.warn("TAG = request,接收到请求");
         String msg = "success";
         List<Production> productionList = null;
         try {

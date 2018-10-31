@@ -10,6 +10,11 @@ public interface ProductionService {
 
     Production selectProductionById(long id);
 
+    /**
+     * 更新产品简介
+     * @param id 数据库唯一标识
+     * @param intro 产品简介
+     */
     void updateProductionIntro(long id, String intro);
 
     void deleteProductionById(long id);

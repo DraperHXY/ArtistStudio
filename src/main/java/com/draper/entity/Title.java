@@ -1,9 +1,16 @@
 package com.draper.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Title {
     private long id;
+
+    @JsonIgnore
     private long createAt;
+
+    @JsonIgnore
     private long updateAt;
+
     private String name;
     private int level;
     private String url;
@@ -15,7 +22,6 @@ public class Title {
     }
 
     public void setId(long id) {
-//        System.err.println("id = " + id);
         this.id = id;
     }
 

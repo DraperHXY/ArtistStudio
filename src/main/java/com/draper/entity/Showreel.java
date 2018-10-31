@@ -1,10 +1,17 @@
 package com.draper.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Showreel {
 
     private long id;
+
+    @JsonIgnore
     private long createAt;
+
+    @JsonIgnore
     private long updateAt;
+
     private String name;
     private int state;
     private long editorId;

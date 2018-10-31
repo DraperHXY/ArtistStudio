@@ -1,10 +1,17 @@
 package com.draper.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Artist {
 
     private long id;
+
+    @JsonIgnore
     private long createAt;
+
+    @JsonIgnore
     private long updateAt;
+
     private String email;
     private String name;
     private String phoneNumber;
